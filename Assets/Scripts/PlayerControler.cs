@@ -9,13 +9,17 @@ public class PlayerControler : MonoBehaviour
     public UnityEvent<Vector2> OnMoveBody = new UnityEvent<Vector2>();
     public UnityEvent<Vector2> OnMovePointer = new UnityEvent<Vector2>();
     [SerializeField]
-    private InputActionReference movement, attack, pointerPosition; 
-
+    private InputActionReference movement, attack, pointerPosition;
+    private WeaponParent weaponParent;
     // Update is called once per frame
+    private void Awake()
+    {
+        weaponParent = GetComponentInChildren<WeaponParent>();
+    }
     void Update()
     {
         GetBodyMovement();
-        GetPointerPosition();
+        weaponParent.PointerPosition = GetPointerPosition();
     }
     private void GetBodyMovement()
     {
@@ -24,11 +28,11 @@ public class PlayerControler : MonoBehaviour
         OnMoveBody?.Invoke(movementVector);
     }
 
-    private void GetPointerPosition()
+    private Vector2 GetPointerPosition()
     {
         Vector2 mousePos = pointerPosition.action.ReadValue<Vector2>();
         //Debug.Log(mousePos);
-        OnMovePointer?.Invoke(Camera.main.ScreenToWorldPoint(mousePos));
+        return Camera.main.ScreenToWorldPoint(mousePos);
     }
 
     private void OnEnable()
