@@ -33,6 +33,7 @@ public class CharacterMover : MonoBehaviour
     }
     private void CalculateSpeed()
     {
+
         if (MathF.Abs(movementVector.y) == 0 && MathF.Abs(movementVector.x) == 0)
         {
             currentSpeed += -Acceleration * Time.deltaTime;
