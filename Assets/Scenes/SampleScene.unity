@@ -424,6 +424,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1268261177 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 213646953983895696, guid: 39c586ee10e58264e9d847ea8c216cb8, type: 3}
+  m_PrefabInstance: {fileID: 213646952717732265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1277088341
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +695,83 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isDead: 0
+--- !u!1 &1390152143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6569643813304416071, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
+  m_PrefabInstance: {fileID: 7177824960586494483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1390152146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6569643813304416072, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
+  m_PrefabInstance: {fileID: 7177824960586494483}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390152143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81b604dcbaa1204d926dc8bddeeb039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1390152152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390152143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddfd56a9807d004b9f868291c103edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMovementInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1390152146}
+        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
+        m_MethodName: set_MovementInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1390152146}
+        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
+        m_MethodName: set_PointerInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1390152146}
+        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
+        m_MethodName: PerformAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  player: {fileID: 1268261177}
+  chaseDistanceThreshold: 15
+  attackDistanceThreshold: 2
+  attackDelay: 1
 --- !u!1001 &213646952717732265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -754,9 +836,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6569643812932188232, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6569643813304416071, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569643813304416071, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6569643813304416075, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
       propertyPath: m_RootOrder
@@ -801,6 +891,14 @@ PrefabInstance:
     - target: {fileID: 6569643813304416075, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569643813310182997, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569643813431822912, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
