@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class AnimationEventHelper : MonoBehaviour
+{
+    public UnityEvent OnAnimationEventTriggered, OnAttackPreformed;
+    public void TriggerEvent()
+    {
+        OnAnimationEventTriggered?.Invoke();
+    }
+    public void TriggerAttack()
+    {
+        OnAttackPreformed?.Invoke();
+    }
+}

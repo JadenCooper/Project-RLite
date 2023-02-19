@@ -45,11 +45,11 @@ public class PlayerControler : MonoBehaviour
     }
     private void PerformAttack(InputAction.CallbackContext obj)
     {
-        //if(weaponParent == null)
-        //{
-        //    Debug.Log("weaponParent Is Null");
-        //    return;
-        //}
-        //weaponParent.PreformAnAttack();
+        if (weaponParent == null)
+        {
+            Debug.Log("weaponParent Is Null");
+            return;
+        }
+        weaponParent.Attack();
     }
 }
