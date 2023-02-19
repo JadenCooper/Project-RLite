@@ -52,13 +52,13 @@ public class CharacterMover : MonoBehaviour
     {
         if (movementVector.x < 0)
         {
-            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-            //gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            //gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
         else
         {
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-            //gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            //gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
     }
     private void FixedUpdate()
