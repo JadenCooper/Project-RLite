@@ -65,9 +65,171 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 213646953983895708, guid: 39c586ee10e58264e9d847ea8c216cb8, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 213646953983895702, guid: 39c586ee10e58264e9d847ea8c216cb8, type: 3}
     - {fileID: 213646953983895700, guid: 39c586ee10e58264e9d847ea8c216cb8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 39c586ee10e58264e9d847ea8c216cb8, type: 3}
+--- !u!50 &6569643813304416068 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 213646953983895711, guid: 39c586ee10e58264e9d847ea8c216cb8, type: 3}
+  m_PrefabInstance: {fileID: 6474794145550950363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6569643813304416071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 213646953983895708, guid: 39c586ee10e58264e9d847ea8c216cb8, type: 3}
+  m_PrefabInstance: {fileID: 6474794145550950363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5462343745540753440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569643813304416071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddfd56a9807d004b9f868291c103edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMovementInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6569643813304416072}
+        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
+        m_MethodName: set_MovementInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6569643813304416072}
+        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
+        m_MethodName: set_PointerInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6569643813304416072}
+        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
+        m_MethodName: PerformAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  player: {fileID: 0}
+  chaseDistanceThreshold: 15
+  attackDistanceThreshold: 2
+  attackDelay: 1
+--- !u!114 &5482159418488285564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569643813304416071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6446584b01410a489447009baf2aa60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 6569643813304416068}
+  strength: 16
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5462343745540753440}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6569643813304416073}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5462343745540753440}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 6569643813304416073}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &6569643813304416072 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 213646953983895699, guid: 39c586ee10e58264e9d847ea8c216cb8, type: 3}
+  m_PrefabInstance: {fileID: 6474794145550950363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569643813304416071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81b604dcbaa1204d926dc8bddeeb039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6569643813304416073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 213646953983895698, guid: 39c586ee10e58264e9d847ea8c216cb8, type: 3}
+  m_PrefabInstance: {fileID: 6474794145550950363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569643813304416071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb51fa9dac3d379499aef2c5600f6db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
