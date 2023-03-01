@@ -110,9 +110,55 @@ Transform:
   m_Children:
   - {fileID: 7085311926779359035}
   - {fileID: 66834624569263560}
+  - {fileID: 1563037215950933805}
   m_Father: {fileID: 6569643813304416075}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2106055617113097846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1563037215950933805}
+  - component: {fileID: 3926471416410296174}
+  m_Layer: 6
+  m_Name: ContextSolver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1563037215950933805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106055617113097846}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3310572056934047132}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3926471416410296174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106055617113097846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66390503220c2b04095c76d18afaafe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showGizmo: 1
 --- !u!1 &2936693786928486071
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,18 +417,24 @@ MonoBehaviour:
   - {fileID: 282686622633177111}
   aiData: {fileID: 1948700654123034860}
   detectionDelay: 0.05
---- !u!114 &5462343745540753440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6569643813304416071}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bddfd56a9807d004b9f868291c103edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  aiUpdateDelay: 0.06
+  attackDelay: 1
+  attackDistance: 2
+  OnAttackPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6569643813304416072}
+        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
+        m_MethodName: PerformAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnMovementInput:
     m_PersistentCalls:
       m_Calls:
@@ -413,25 +465,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6569643813304416072}
-        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
-        m_MethodName: PerformAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  player: {fileID: 0}
-  chaseDistanceThreshold: 15
-  attackDistanceThreshold: 2
-  attackDelay: 1
+  movementInput: {x: 0, y: 0}
+  movementDirectionSolver: {fileID: 3926471416410296174}
 --- !u!114 &6569643813304416072 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 213646953983895699, guid: 39c586ee10e58264e9d847ea8c216cb8, type: 3}
