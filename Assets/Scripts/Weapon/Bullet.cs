@@ -47,7 +47,6 @@ public class Bullet : MonoBehaviour
         Health health;
         if (health = hit.GetComponent<Health>())
         {
-            Debug.Log(health);
             health.GetHit(damage, gameObject);
         }
         DisableObject();

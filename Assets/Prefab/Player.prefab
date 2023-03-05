@@ -230,7 +230,51 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8559728f-ac9e-4204-9ca0-2faf9a6c4940
+    m_ActionName: PlayerInput/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 171cd2a7-1d56-4027-82c4-4f1dfcb4768b
+    m_ActionName: PlayerInput/PointerPosition[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bc49bdd5-5ff8-499f-8729-e01a4683e3f7
+    m_ActionName: PlayerInput/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 624741ae-ce05-45b4-a2c1-d9b747d51924
+    m_ActionName: PlayerInput/Alt Attack[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7cc641ae-c9f8-486f-91e3-16a189c6041f
+    m_ActionName: PlayerInput/Block[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7552c2bd-9edc-487d-aa09-ff12551595f0
+    m_ActionName: PlayerInput/Reload[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 213646953983895702}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 58adbba3-5370-4fc4-a7de-f11f6b1a4798
+    m_ActionName: PlayerInput/SwapWeapon[/Keyboard/q,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6e4e5927-af11-4d1d-8f11-6f844ba70ced
+    m_ActionName: PauseMenu/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: PlayerInput
@@ -311,6 +355,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnWeaponSwapInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 213646954360317845}
+        m_TargetAssemblyTypeName: WeaponParent, Assembly-CSharp
+        m_MethodName: SwapWeapon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnAttack:
     m_PersistentCalls:
       m_Calls:
@@ -329,6 +388,7 @@ MonoBehaviour:
   movement: {fileID: -7398875592805726955, guid: 28890c3311626924b86972847518d07f, type: 3}
   attack: {fileID: 3643046429129509628, guid: 28890c3311626924b86972847518d07f, type: 3}
   pointerPosition: {fileID: 2985183746882054696, guid: 28890c3311626924b86972847518d07f, type: 3}
+  swapWeapon: {fileID: -8747936936081256032, guid: 28890c3311626924b86972847518d07f, type: 3}
 --- !u!114 &8920461597812778704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,6 +506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 5647953659991806159}
+  - {fileID: 5783595195877663657}
+  WeaponIndex: 0
   EquipedWeapon: {fileID: 5647953659991806159}
   charcterRenderer: {fileID: 213646953983895697}
   weaponRenderer: {fileID: 213646953964497280}
@@ -661,3 +723,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 865705295212545175, guid: 24a135e44afe7144fafa050e52c014bb, type: 3}
   m_PrefabInstance: {fileID: 1077658442647498006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5783595195877663657 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6825180585418673855, guid: 24a135e44afe7144fafa050e52c014bb, type: 3}
+  m_PrefabInstance: {fileID: 1077658442647498006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b10a9e794d40847a21924911fcd0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

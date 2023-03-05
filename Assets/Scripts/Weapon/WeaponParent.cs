@@ -8,6 +8,7 @@ public class WeaponParent : MonoBehaviour
     public Vector3 PointerPosition { get; set; }
     public bool IsAttacking { get; private set; }
     public List<Weapon> weapons;
+    public int WeaponIndex = 0;
     public Weapon EquipedWeapon;
     public SpriteRenderer charcterRenderer, weaponRenderer;
     public Vector2 facedDirection;
@@ -49,5 +50,32 @@ public class WeaponParent : MonoBehaviour
     {
         EquipedWeapon.direciton = facedDirection;
         EquipedWeapon.Attack();
+    }
+
+    public void SwapWeapon(float direction)
+    {
+        if (direction > 0)
+        {
+            // Next Weapon
+            Debug.Log("Next");
+            WeaponIndex++;
+            if (WeaponIndex == weapons.Count)
+            {
+                WeaponIndex = 0;
+            }
+        }
+        else
+        {
+            // Previous Weapon
+            Debug.Log("Previous");
+            WeaponIndex--;
+            if (WeaponIndex < 0)
+            {
+                WeaponIndex = weapons.Count - 1;
+            }
+        }
+        EquipedWeapon.gameObject.SetActive(false);
+        EquipedWeapon = weapons[WeaponIndex];
+        EquipedWeapon.gameObject.SetActive(true);
     }
 }

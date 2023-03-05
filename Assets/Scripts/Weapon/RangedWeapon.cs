@@ -26,6 +26,13 @@ public class RangedWeapon : Weapon
         attackBlock = true;
         StartCoroutine(DelayAttack());
     }
+    public override void OnEnable()
+    {
+        attackBlock = false;
+        IsAttacking = false;
+        isReloading = false;
+        currentClip = MaxAmmo;
+    }
     public void Shoot()
     {
         GameObject newBullet = Instantiate(Bullet, barrel.position, barrel.rotation);

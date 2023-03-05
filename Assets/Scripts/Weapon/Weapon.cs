@@ -27,6 +27,15 @@ public abstract class Weapon : MonoBehaviour
         StartCoroutine(DelayAttack());
     }
 
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+    public virtual void OnEnable()
+    {
+        attackBlock = false;
+        IsAttacking = false;
+    }
     public IEnumerator DelayAttack()
     {
         yield return new WaitForSeconds(AttackDelay);
