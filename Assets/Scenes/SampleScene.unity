@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 282686622633177111, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 3397647495794148988, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
       propertyPath: attackDistance
       value: 2.5
@@ -843,6 +847,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 282686622633177111, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 3397647495794148988, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
       propertyPath: attackDistance
       value: 2.5
@@ -928,6 +936,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 282686622633177111, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 3397647495794148988, guid: 2e48b656696f17f489dc81c5a024ba74, type: 3}
       propertyPath: attackDistance
       value: 2.5

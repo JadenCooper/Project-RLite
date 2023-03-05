@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raidus: 2
-  agentColliderSize: 0.6
+  agentColliderSize: 1
   showGizmo: 1
 --- !u!1 &523747266507228027
 GameObject:
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668e76f35f925a840a4dd4d2b39a6b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 5
+  detectionRadius: 6
   layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8914857c02d284c4cb5f05e6714c2eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetDetectionRange: 7
+  targetDetectionRange: 10
   obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 320
