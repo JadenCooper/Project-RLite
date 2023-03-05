@@ -9,7 +9,7 @@ public class TargetDetector : Detector
 
     [SerializeField]
     private LayerMask obstacleLayerMask, playerLayerMask;
-
+    public List<Collider2D> Targets = new List<Collider2D>();
     [SerializeField]
     private bool showGizmos = false;
 
@@ -18,8 +18,22 @@ public class TargetDetector : Detector
     public override void Detect(AIData aIData)
     {
         //Find out if player is near
-        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, targetDetectionRange, playerLayerMask);
-
+        Targets.AddRange(Physics2D.OverlapCircleAll(transform.position, targetDetectionRange, playerLayerMask));
+        Collider2D playerCollider = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        foreach (Collider2D target in Targets)
+        {
+            if (target.gameObject.tag == "Agent")
+            {
+                Vector3 directionToTarget = target.gameObject.transform.position - transform.position;
+                float dSqrToTarget = directionToTarget.sqrMagnitude;
+                if (dSqrToTarget < closestDistanceSqr)
+                {
+                    closestDistanceSqr = dSqrToTarget;
+                    playerCollider = target;
+                }
+            }
+        }
         if (playerCollider != null)
         {
             // Check if you see the player

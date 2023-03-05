@@ -19,7 +19,6 @@ public class PlayerInput : MonoBehaviour
     private Vector2 GetPointerPosition()
     {
         Vector2 mousePos = pointerPosition.action.ReadValue<Vector2>();
-        //Debug.Log(mousePos);
         return Camera.main.ScreenToWorldPoint(mousePos);
     }
 
