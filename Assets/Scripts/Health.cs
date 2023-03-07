@@ -8,16 +8,22 @@ public class Health : MonoBehaviour
     [SerializeField]
     private int currentHealth, maxHealth;
     public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
+    private KnockbackFeedback knockbackFeedback;
     [SerializeField]
     private bool isDead;
+    private void Start()
+    {
+        knockbackFeedback = gameObject.GetComponent<KnockbackFeedback>();
+    }
     public void InitializeHealth(int healthValue)
     {
         currentHealth = healthValue;
         maxHealth = healthValue;
         isDead = false;
     }
-    public void GetHit(int damageTaken, GameObject sender)
+    public void GetHit(int damageTaken, GameObject sender, float knockback)
     {
+        Debug.Log(sender);
         if (isDead)
         {
             return;
@@ -29,7 +35,7 @@ public class Health : MonoBehaviour
         currentHealth -= damageTaken;
         if (currentHealth > 0)
         {
-            OnHitWithReference?.Invoke(sender);
+            knockbackFeedback.PlayFeedback(sender, knockback);
         }
         else
         {

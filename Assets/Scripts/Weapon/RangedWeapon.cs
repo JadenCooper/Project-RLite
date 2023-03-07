@@ -40,6 +40,7 @@ public class RangedWeapon : Weapon
         Bullet bullet = newBullet.GetComponent<Bullet>();
         bullet.damage = damage;
         bullet.Direction = direciton;
+        bullet.knockbackStrength = knockbackStrength;
         currentClip--;
         if (currentClip <= 0)
         {

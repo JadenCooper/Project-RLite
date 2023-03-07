@@ -9,6 +9,7 @@ public abstract class Weapon : MonoBehaviour
     public float AttackDelay = 0.3f;
     public bool attackBlock;
     public int damage;
+    public float knockbackStrength = 5; 
     public Vector2 direciton;
     public void ResetIsAttacking()
     {

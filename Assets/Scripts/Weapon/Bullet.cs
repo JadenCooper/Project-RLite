@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb2d;
     public Vector2 Direction;
     public int damage = 1;
-
+    public float knockbackStrength = 1;
     private void Start()
     {
         Initialize();
@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
         Health health;
         if (health = hit.GetComponent<Health>())
         {
-            health.GetHit(damage, gameObject);
+            health.GetHit(damage, gameObject, knockbackStrength);
         }
         DisableObject();
     }
