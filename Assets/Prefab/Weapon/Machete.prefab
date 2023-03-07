@@ -133,7 +133,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 865705295212545173}
   AttackDelay: 0.3
-  damage: 1
+  attackBlock: 0
+  damage: 4
+  knockbackStrength: 15
+  direciton: {x: 0, y: 0}
   circleOrigin: {fileID: 865705295057385612}
   radius: 1.7
 --- !u!95 &865705295212545173

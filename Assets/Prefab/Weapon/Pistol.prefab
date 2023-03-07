@@ -102,7 +102,7 @@ MonoBehaviour:
   AttackDelay: 0.3
   attackBlock: 0
   damage: 3
-  knockbackStrength: 2
+  knockbackStrength: 6
   direciton: {x: 0, y: 0}
   Bullet: {fileID: 4151982211634839103, guid: 67367c3f7fc9a4948b5b076e4f2d62a2, type: 3}
   barrel: {fileID: 7005763983691695467}
