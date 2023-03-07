@@ -132,11 +132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 865705295212545173}
-  AttackDelay: 0.3
   attackBlock: 0
-  damage: 4
-  knockbackStrength: 15
   direciton: {x: 0, y: 0}
+  weaponStats: {fileID: 11400000, guid: a67e7e31d2fa9d749b89c8f4799967f6, type: 2}
   circleOrigin: {fileID: 865705295057385612}
   radius: 1.7
 --- !u!95 &865705295212545173

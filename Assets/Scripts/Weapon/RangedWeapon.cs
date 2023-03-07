@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class RangedWeapon : Weapon
 {
-    public GameObject Bullet;
     public Transform barrel;
-    public int MaxAmmo = 5;
-    public int currentClip = 5;
     public bool isReloading = false;
-    public float ReloadDelay = 2f;
+    public RangedStats rangedStats;
+    public int currentClip;
     private void Start()
     {
-        currentClip = MaxAmmo;
+        currentClip = rangedStats.MaxAmmo;
     }
     public override void Attack()
     {
@@ -31,16 +29,15 @@ public class RangedWeapon : Weapon
         attackBlock = false;
         IsAttacking = false;
         isReloading = false;
-        currentClip = MaxAmmo;
+        currentClip = rangedStats.MaxAmmo;
     }
     public void Shoot()
     {
-        GameObject newBullet = Instantiate(Bullet, barrel.position, barrel.rotation);
+        GameObject newBullet = Instantiate(rangedStats.Bullet, barrel.position, barrel.rotation);
         newBullet.layer = gameObject.layer;
         Bullet bullet = newBullet.GetComponent<Bullet>();
-        bullet.damage = damage;
-        bullet.Direction = direciton;
-        bullet.knockbackStrength = knockbackStrength;
+        rangedStats.bulletData.Direction = direciton;
+        bullet.bulletData = rangedStats.bulletData;
         currentClip--;
         if (currentClip <= 0)
         {
@@ -53,8 +50,8 @@ public class RangedWeapon : Weapon
     public IEnumerator Reloading()
     {
         Debug.Log("Reloading");
-        yield return new WaitForSeconds(ReloadDelay);
+        yield return new WaitForSeconds(rangedStats.ReloadDelay);
         isReloading = false;
-        currentClip = MaxAmmo;
+        currentClip = rangedStats.MaxAmmo;
     }
 }

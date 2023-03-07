@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float Speed = 20;
-    public float MaxDistance = 10;
     private Vector2 startPostion;
     private float conquaredDistance = 0;
     public Rigidbody2D rb2d;
-    public Vector2 Direction;
-    public int damage = 1;
-    public float knockbackStrength = 1;
+    public BulletData bulletData;
     private void Start()
     {
         Initialize();
@@ -19,12 +15,12 @@ public class Bullet : MonoBehaviour
     public void Initialize()
     {
         startPostion = transform.position;
-        rb2d.velocity = Direction * Speed;
+        rb2d.velocity = bulletData.Direction * bulletData.Speed;
     }
     private void Update()
     {
         conquaredDistance = Vector2.Distance(transform.position, startPostion);
-        if (conquaredDistance > MaxDistance)
+        if (conquaredDistance > bulletData.MaxDistance)
         {
             DisableObject();
         }
@@ -47,7 +43,7 @@ public class Bullet : MonoBehaviour
         Health health;
         if (health = hit.GetComponent<Health>())
         {
-            health.GetHit(damage, gameObject, knockbackStrength);
+            health.GetHit(bulletData.damage, gameObject, bulletData.knockbackStrength);
         }
         DisableObject();
     }

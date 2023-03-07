@@ -21,7 +21,7 @@ public class MeleeWeapon : Weapon
             Health health;
             if (health = collider.GetComponent<Health>())
             {
-                health.GetHit(damage, transform.parent.gameObject, knockbackStrength);
+                health.GetHit(weaponStats.damage, transform.parent.gameObject, weaponStats.knockbackStrength);
             }
         }
     }

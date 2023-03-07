@@ -99,17 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  AttackDelay: 0.3
   attackBlock: 0
-  damage: 3
-  knockbackStrength: 6
   direciton: {x: 0, y: 0}
-  Bullet: {fileID: 4151982211634839103, guid: 67367c3f7fc9a4948b5b076e4f2d62a2, type: 3}
+  weaponStats: {fileID: 11400000, guid: bfcd9f3aab2d83841bc05121d77c318e, type: 2}
   barrel: {fileID: 7005763983691695467}
-  MaxAmmo: 5
-  currentClip: 5
   isReloading: 0
-  ReloadDelay: 2
+  rangedStats: {fileID: 0}
+  currentClip: 5
 --- !u!1 &6131084322798950632
 GameObject:
   m_ObjectHideFlags: 0

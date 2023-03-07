@@ -6,11 +6,9 @@ public abstract class Weapon : MonoBehaviour
 {
     public bool IsAttacking { get; set; }
     public Animator animator;
-    public float AttackDelay = 0.3f;
     public bool attackBlock;
-    public int damage;
-    public float knockbackStrength = 5; 
     public Vector2 direciton;
+    public WeaponStats weaponStats;
     public void ResetIsAttacking()
     {
         IsAttacking = false;
@@ -39,7 +37,7 @@ public abstract class Weapon : MonoBehaviour
     }
     public IEnumerator DelayAttack()
     {
-        yield return new WaitForSeconds(AttackDelay);
+        yield return new WaitForSeconds(weaponStats.AttackDelay);
         attackBlock = false;
     }
 }
