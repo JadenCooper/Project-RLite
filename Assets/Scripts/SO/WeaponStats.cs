@@ -7,5 +7,5 @@ public class WeaponStats : ScriptableObject
 {
     public float AttackDelay = 0.3f;
     public float knockbackStrength = 5;
-    public int damage;
+    public int damage = 1;
 }

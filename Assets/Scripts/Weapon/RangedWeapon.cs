@@ -6,11 +6,20 @@ public class RangedWeapon : Weapon
 {
     public Transform barrel;
     public bool isReloading = false;
-    public RangedStats rangedStats;
     public int currentClip;
+    public RangedStats rangedStats;
+    private void Awake()
+    {
+        SetBulletStats();
+    }
     private void Start()
     {
         currentClip = rangedStats.MaxAmmo;
+    }
+    public void SetBulletStats()
+    {
+        rangedStats.bulletData.damage = rangedStats.damage;
+        rangedStats.bulletData.knockbackStrength = rangedStats.knockbackStrength;
     }
     public override void Attack()
     {
@@ -53,5 +62,11 @@ public class RangedWeapon : Weapon
         yield return new WaitForSeconds(rangedStats.ReloadDelay);
         isReloading = false;
         currentClip = rangedStats.MaxAmmo;
+    }
+
+    public override IEnumerator DelayAttack()
+    {
+        yield return new WaitForSeconds(rangedStats.AttackDelay);
+        attackBlock = false;
     }
 }

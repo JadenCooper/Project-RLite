@@ -101,11 +101,10 @@ MonoBehaviour:
   animator: {fileID: 0}
   attackBlock: 0
   direciton: {x: 0, y: 0}
-  weaponStats: {fileID: 11400000, guid: bfcd9f3aab2d83841bc05121d77c318e, type: 2}
   barrel: {fileID: 7005763983691695467}
   isReloading: 0
-  rangedStats: {fileID: 0}
   currentClip: 5
+  rangedStats: {fileID: 11400000, guid: bb9d27b623ddd9945b9ab4c689d41d71, type: 2}
 --- !u!1 &6131084322798950632
 GameObject:
   m_ObjectHideFlags: 0

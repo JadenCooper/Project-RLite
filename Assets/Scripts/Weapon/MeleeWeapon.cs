@@ -6,6 +6,7 @@ public class MeleeWeapon : Weapon
 {
     public Transform circleOrigin;
     public float radius;
+    public WeaponStats weaponStats;
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
@@ -24,5 +25,11 @@ public class MeleeWeapon : Weapon
                 health.GetHit(weaponStats.damage, transform.parent.gameObject, weaponStats.knockbackStrength);
             }
         }
+    }
+
+    public override IEnumerator DelayAttack()
+    {
+        yield return new WaitForSeconds(weaponStats.AttackDelay);
+        attackBlock = false;
     }
 }
