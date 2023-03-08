@@ -14,7 +14,7 @@ public abstract class Weapon : MonoBehaviour
     }
     public virtual void Attack()
     {
-        Debug.Log("Attacking");
+        //Debug.Log("Attacking");
         if (attackBlock)
         {
             return;

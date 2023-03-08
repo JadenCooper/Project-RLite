@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
     }
     public void GetHit(int damageTaken, GameObject sender, float knockback)
     {
-        Debug.Log(sender);
+        //Debug.Log(sender);
         if (isDead)
         {
             return;

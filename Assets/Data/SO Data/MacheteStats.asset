@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MacheteStats
   m_EditorClassIdentifier: 
   AttackDelay: 0.3
-  knockbackStrength: 5
+  knockbackStrength: 10
   damage: 5

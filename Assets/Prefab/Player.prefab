@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 213646953983895711}
-  delay: 0.15
+  defaultDelay: 0.15
   Mass: 5
   OnBegin:
     m_PersistentCalls:

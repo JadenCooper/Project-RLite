@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efbb7a1dff32c704aa2cf704e01fc068, type: 3}
   m_Name: PistolBullet
   m_EditorClassIdentifier: 
-  Direction: {x: 0, y: 0}
+  Direction: {x: -0.9777962, y: 0.20955794}
   damage: 1
-  knockbackStrength: 1
+  knockbackStrength: 5
   Speed: 20
-  MaxDistance: 10
+  MaxDistance: 15
