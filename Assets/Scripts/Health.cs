@@ -39,7 +39,6 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             knockbackFeedback.PlayFeedback(sender, knockback);
-            ChangeHealth?.Invoke(currentHealth);
         }
         else
         {
@@ -47,5 +46,6 @@ public class Health : MonoBehaviour
             isDead = true;
             gameObject.SetActive(false);
         }
+        ChangeHealth?.Invoke(currentHealth);
     }
 }

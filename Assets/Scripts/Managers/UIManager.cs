@@ -20,6 +20,6 @@ public class UIManager : MonoBehaviour
     private void SetHealthUI()
     {
         healthText.text = health.x.ToString() + "/" + health.y.ToString();
-        Debug.Log(health);
+        //Debug.Log(health);
     }
 }
