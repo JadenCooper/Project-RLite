@@ -7,13 +7,16 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     private int currentHealth, maxHealth;
-    public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
+    public UnityEvent<GameObject> OnDeathWithReference;
+    public UnityEvent<float> ChangeHealth, SetHealth;
     private KnockbackFeedback knockbackFeedback;
     [SerializeField]
     private bool isDead;
     private void Start()
     {
         knockbackFeedback = gameObject.GetComponent<KnockbackFeedback>();
+        SetHealth?.Invoke(maxHealth);
+        ChangeHealth?.Invoke(currentHealth);
     }
     public void InitializeHealth(int healthValue)
     {
@@ -36,6 +39,7 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             knockbackFeedback.PlayFeedback(sender, knockback);
+            ChangeHealth?.Invoke(currentHealth);
         }
         else
         {
