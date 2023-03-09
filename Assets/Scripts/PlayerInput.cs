@@ -9,9 +9,9 @@ public class PlayerInput : MonoBehaviour
 {
     public UnityEvent<Vector2> OnMovementInput, OnPointerInput;
     public UnityEvent<float> OnWeaponSwapInput;
-    public UnityEvent OnAttack;
+    public UnityEvent OnAttack, OnReload;
     [SerializeField]
-    private InputActionReference movement, attack, pointerPosition, swapWeapon;
+    private InputActionReference movement, attack, pointerPosition, swapWeapon, reload;
     private void Update()
     {
         OnMovementInput?.Invoke(movement.action.ReadValue<Vector2>().normalized);
@@ -27,11 +27,13 @@ public class PlayerInput : MonoBehaviour
     {
         attack.action.performed += PerformAttack;
         swapWeapon.action.performed += PreformWeaponSwap;
+        reload.action.performed += PreformReload;
     }
     private void OnDisable()
     {
         attack.action.performed -= PerformAttack;
         swapWeapon.action.performed -= PreformWeaponSwap;
+        reload.action.performed -= PreformReload;
     }
     private void PerformAttack(InputAction.CallbackContext obj)
     {
@@ -40,5 +42,9 @@ public class PlayerInput : MonoBehaviour
     private void PreformWeaponSwap(InputAction.CallbackContext obj)
     {
         OnWeaponSwapInput?.Invoke(swapWeapon.action.ReadValue<float>());
+    }
+    private void PreformReload(InputAction.CallbackContext obj)
+    {
+        OnReload?.Invoke();
     }
 }

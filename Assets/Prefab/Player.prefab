@@ -376,10 +376,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnReload:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 213646954360317845}
+        m_TargetAssemblyTypeName: WeaponParent, Assembly-CSharp
+        m_MethodName: Reload
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   movement: {fileID: -7398875592805726955, guid: 28890c3311626924b86972847518d07f, type: 3}
   attack: {fileID: 3643046429129509628, guid: 28890c3311626924b86972847518d07f, type: 3}
   pointerPosition: {fileID: 2985183746882054696, guid: 28890c3311626924b86972847518d07f, type: 3}
   swapWeapon: {fileID: -8747936936081256032, guid: 28890c3311626924b86972847518d07f, type: 3}
+  reload: {fileID: -3092865643214960690, guid: 28890c3311626924b86972847518d07f, type: 3}
 --- !u!114 &8920461597812778704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,6 +655,10 @@ PrefabInstance:
     - target: {fileID: 2780805447986215175, guid: 56dd78bd22243294ca1216cc9fd04ea2, type: 3}
       propertyPath: m_Name
       value: Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 2780805447986215175, guid: 56dd78bd22243294ca1216cc9fd04ea2, type: 3}
+      propertyPath: m_TagString
+      value: Ranged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56dd78bd22243294ca1216cc9fd04ea2, type: 3}

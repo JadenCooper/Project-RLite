@@ -51,7 +51,13 @@ public class WeaponParent : MonoBehaviour
         EquipedWeapon.direciton = facedDirection;
         EquipedWeapon.Attack();
     }
-
+    public void Reload()
+    {
+        if (EquipedWeapon.tag == "Ranged")
+        {
+            EquipedWeapon.Reload();
+        }
+    }
     public void SwapWeapon(float direction)
     {
         if (direction > 0)

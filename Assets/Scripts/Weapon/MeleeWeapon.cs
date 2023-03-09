@@ -32,4 +32,9 @@ public class MeleeWeapon : Weapon
         yield return new WaitForSeconds(weaponStats.AttackDelay);
         attackBlock = false;
     }
+
+    public override void Reload()
+    {
+        Debug.Log("This Weapon Is Melee Not Ranged");
+    }
 }

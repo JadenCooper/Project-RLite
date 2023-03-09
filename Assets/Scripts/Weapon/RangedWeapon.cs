@@ -78,4 +78,13 @@ public class RangedWeapon : Weapon
         yield return new WaitForSeconds(rangedStats.AttackDelay);
         attackBlock = false;
     }
+    public override void Reload()
+    {
+        if (isReloading == false)
+        {
+            Debug.Log("Reload");
+            isReloading = true;
+            StartCoroutine(Reloading());
+        }
+    }
 }

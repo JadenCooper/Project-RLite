@@ -35,4 +35,5 @@ public abstract class Weapon : MonoBehaviour
         IsAttacking = false;
     }
     public abstract IEnumerator DelayAttack();
+    public abstract void Reload();
 }
