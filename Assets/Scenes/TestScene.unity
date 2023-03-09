@@ -653,7 +653,7 @@ MonoBehaviour:
   smoothSpeed: 0.08
   locationOffset: {x: 0, y: 0, z: -12}
   rotationOffset: {x: 0, y: 0, z: 0}
-  MinMaxZoom: {x: 8, y: 11}
+  MinMaxZoom: {x: 5, y: 10}
   ZoomIncrement: 1
   cam: {fileID: 0}
   zoom: {fileID: -1176499950410500738, guid: 28890c3311626924b86972847518d07f, type: 3}
@@ -1109,7 +1109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -395, y: 245}
+  m_AnchoredPosition: {x: -338.3, y: 211.2}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1021630903

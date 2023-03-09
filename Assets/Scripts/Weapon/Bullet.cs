@@ -8,12 +8,10 @@ public class Bullet : MonoBehaviour
     private float conquaredDistance = 0;
     public Rigidbody2D rb2d;
     public BulletData bulletData;
-    private void Start()
+    public void Initialize(BulletData newBulletData, Vector2 direction)
     {
-        Initialize();
-    }
-    public void Initialize()
-    {
+        bulletData.Direction = direction;
+        bulletData = newBulletData;
         startPostion = transform.position;
         rb2d.velocity = bulletData.Direction * bulletData.Speed;
     }

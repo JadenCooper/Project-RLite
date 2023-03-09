@@ -8,12 +8,18 @@ public class RangedWeapon : Weapon
     public bool isReloading = false;
     public int currentClip;
     public RangedStats rangedStats;
+    [SerializeField]
+    private ObjectPool bulletPool;
+    [SerializeField]
+    private int bulletPoolCount = 5;
     private void Awake()
     {
         SetBulletStats();
+        bulletPool = GetComponent<ObjectPool>();
     }
     private void Start()
     {
+        bulletPool.Initialize(rangedStats.Bullet, bulletPoolCount);
         currentClip = rangedStats.MaxAmmo;
     }
     public void SetBulletStats()
@@ -42,11 +48,15 @@ public class RangedWeapon : Weapon
     }
     public void Shoot()
     {
-        GameObject newBullet = Instantiate(rangedStats.Bullet, barrel.position, barrel.rotation);
+        //GameObject newBullet = Instantiate(rangedStats.Bullet, barrel.position, barrel.rotation);
+        GameObject newBullet = bulletPool.CreateObject();
+        newBullet.transform.position = barrel.position;
+        newBullet.transform.rotation = barrel.rotation;
         newBullet.layer = gameObject.layer;
-        Bullet bullet = newBullet.GetComponent<Bullet>();
-        rangedStats.bulletData.Direction = direciton;
-        bullet.bulletData = rangedStats.bulletData;
+        newBullet.GetComponent<Bullet>().Initialize(rangedStats.bulletData, direciton);
+        //Bullet bullet = newBullet.GetComponent<Bullet>();
+        //rangedStats.bulletData.Direction = direciton;
+        //bullet.bulletData = rangedStats.bulletData;
         currentClip--;
         if (currentClip <= 0)
         {
@@ -58,7 +68,6 @@ public class RangedWeapon : Weapon
     }
     public IEnumerator Reloading()
     {
-        Debug.Log("Reloading");
         yield return new WaitForSeconds(rangedStats.ReloadDelay);
         isReloading = false;
         currentClip = rangedStats.MaxAmmo;

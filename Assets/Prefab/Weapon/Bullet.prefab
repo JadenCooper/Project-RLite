@@ -146,8 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215e5545f765eac40ad1b889a5a467ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 20
-  MaxDistance: 25
   rb2d: {fileID: 8539975689818956465}
-  Direction: {x: 0, y: 0}
-  damage: 1
+  bulletData: {fileID: 11400000, guid: c1a23fd37b10913428d21261e0f8027e, type: 2}
