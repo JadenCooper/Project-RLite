@@ -18,11 +18,18 @@ public class TargetDetector : Detector
     public override void Detect(AIData aIData)
     {
         //Find out if player is near
+        Targets.Clear();
         Targets.AddRange(Physics2D.OverlapCircleAll(transform.position, targetDetectionRange, playerLayerMask));
+
         Collider2D playerCollider = null;
         float closestDistanceSqr = Mathf.Infinity;
         foreach (Collider2D target in Targets)
         {
+            if (target == null)
+            {
+                Targets.Remove(target);
+                break;
+            }
             if (target.gameObject.tag == "Agent")
             {
                 Vector3 directionToTarget = target.gameObject.transform.position - transform.position;

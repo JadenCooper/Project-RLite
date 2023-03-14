@@ -43,7 +43,7 @@ public class Health : MonoBehaviour
             {
                 OnDeathWithReference?.Invoke(sender);
                 isDead = true;
-                gameObject.SetActive(false);
+                Destroy(gameObject);
             }
         }
         knockbackFeedback.PlayFeedback(sender, knockback);
