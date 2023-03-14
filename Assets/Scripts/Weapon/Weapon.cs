@@ -36,4 +36,5 @@ public abstract class Weapon : MonoBehaviour
     }
     public abstract IEnumerator DelayAttack();
     public abstract void Reload();
+    public abstract void AltWeaponAction();
 }

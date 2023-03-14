@@ -391,11 +391,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnAltWeaponAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 213646954360317845}
+        m_TargetAssemblyTypeName: WeaponParent, Assembly-CSharp
+        m_MethodName: AltWeaponAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   movement: {fileID: -7398875592805726955, guid: 28890c3311626924b86972847518d07f, type: 3}
   attack: {fileID: 3643046429129509628, guid: 28890c3311626924b86972847518d07f, type: 3}
   pointerPosition: {fileID: 2985183746882054696, guid: 28890c3311626924b86972847518d07f, type: 3}
   swapWeapon: {fileID: -8747936936081256032, guid: 28890c3311626924b86972847518d07f, type: 3}
   reload: {fileID: -3092865643214960690, guid: 28890c3311626924b86972847518d07f, type: 3}
+  AltWeaponAction: {fileID: -6790065051552767511, guid: 28890c3311626924b86972847518d07f, type: 3}
 --- !u!114 &8920461597812778704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,6 +535,7 @@ MonoBehaviour:
   charcterRenderer: {fileID: 213646953983895697}
   weaponRenderer: {fileID: 213646953964497280}
   facedDirection: {x: 0, y: 0}
+  health: {fileID: 213646953983895703}
 --- !u!1001 &1077658442647498006
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -87,4 +87,9 @@ public class RangedWeapon : Weapon
             StartCoroutine(Reloading());
         }
     }
+
+    public override void AltWeaponAction()
+    {
+        throw new System.NotImplementedException();
+    }
 }

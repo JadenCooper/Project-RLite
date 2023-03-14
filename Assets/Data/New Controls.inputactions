@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Block",
+                    "name": "AltWeaponAction",
                     "type": "Button",
                     "id": "7cc641ae-c9f8-486f-91e3-16a189c6041f",
                     "expectedControlType": "Button",
@@ -262,7 +262,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Block",
+                    "action": "AltWeaponAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -13,6 +13,8 @@ public class WeaponParent : MonoBehaviour
     public SpriteRenderer charcterRenderer, weaponRenderer;
     public Vector2 facedDirection;
     private float IntialScale;
+    [SerializeField]
+    private Health health;
     private void Start()
     {
         IntialScale = transform.localScale.y;
@@ -51,6 +53,11 @@ public class WeaponParent : MonoBehaviour
         EquipedWeapon.direciton = facedDirection;
         EquipedWeapon.Attack();
     }
+    public void AltWeaponAction()
+    {
+        EquipedWeapon.direciton = facedDirection;
+        EquipedWeapon.AltWeaponAction();
+    }
     public void Reload()
     {
         if (EquipedWeapon.tag == "Ranged")
@@ -83,5 +90,9 @@ public class WeaponParent : MonoBehaviour
         EquipedWeapon.gameObject.SetActive(false);
         EquipedWeapon = weapons[WeaponIndex];
         EquipedWeapon.gameObject.SetActive(true);
+    }
+    public void SetBlock()
+    {
+        health.IsBlocking = !health.IsBlocking;
     }
 }

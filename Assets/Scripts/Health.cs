@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     private KnockbackFeedback knockbackFeedback;
     [SerializeField]
     private bool isDead;
+    public bool IsBlocking { get; set; } = false;
     private void Start()
     {
         knockbackFeedback = gameObject.GetComponent<KnockbackFeedback>();
@@ -35,17 +36,17 @@ public class Health : MonoBehaviour
         {
             return;
         }
-        currentHealth -= damageTaken;
-        if (currentHealth > 0)
+        if (!IsBlocking)
         {
-            knockbackFeedback.PlayFeedback(sender, knockback);
+            currentHealth -= damageTaken;
+            if (currentHealth <= 0)
+            {
+                OnDeathWithReference?.Invoke(sender);
+                isDead = true;
+                gameObject.SetActive(false);
+            }
         }
-        else
-        {
-            OnDeathWithReference?.Invoke(sender);
-            isDead = true;
-            gameObject.SetActive(false);
-        }
+        knockbackFeedback.PlayFeedback(sender, knockback);
         ChangeHealth?.Invoke(currentHealth);
     }
 }

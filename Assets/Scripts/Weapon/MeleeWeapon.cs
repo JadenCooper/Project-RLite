@@ -7,6 +7,14 @@ public class MeleeWeapon : Weapon
     public Transform circleOrigin;
     public float radius;
     public WeaponStats weaponStats;
+    public bool CanBlock = true;
+    public float blockTime = 0.5f;
+    public float blockDelay = 0.5f;
+    private WeaponParent weaponParent;
+    private void Awake()
+    {
+        weaponParent= GetComponentInParent<WeaponParent>();
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
@@ -36,5 +44,29 @@ public class MeleeWeapon : Weapon
     public override void Reload()
     {
         Debug.Log("This Weapon Is Melee Not Ranged");
+    }
+
+    public override void AltWeaponAction()
+    {
+        //Block 
+        if (CanBlock)
+        {
+            StartCoroutine(BlockTime());
+        }
+    }
+    public  IEnumerator BlockTime()
+    {
+        Debug.Log("Blocking");
+        weaponParent.SetBlock();
+        CanBlock = false;
+        yield return new WaitForSeconds(blockTime);
+        StartCoroutine(BlockDelay());
+    }
+    public  IEnumerator BlockDelay()
+    {
+        weaponParent.SetBlock();
+        yield return new WaitForSeconds(weaponStats.AttackDelay);
+        CanBlock = true;
+        Debug.Log("Can Block Again");
     }
 }
